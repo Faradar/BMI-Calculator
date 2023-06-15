@@ -1,0 +1,98 @@
+/* Base */ /* Colors */
+/* Typography */
+/* Reset the margin and padding */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before, *::after {
+  display: block;
+}
+
+/* Avoid problems with images */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reset the links to function as boxes... */
+a {
+  display: block;
+}
+
+/* ... except those found in paragraphs */
+p a {
+  display: inline;
+}
+
+/* Remove the points from the <li> */
+li {
+  list-style-type: none;
+}
+
+/* Set soft anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Deactivate default styles for the main text labels */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Avoid problems with the pseudo-elements of quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none;
+}
+
+/* Configure the text that we select */
+::selection {
+  background-color: #393939;
+  color: #ececec;
+}
+
+/* Level typography and form placement problems */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+}
+
+/* Reset tables */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Avoid problems with the SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configure the typography for the entire web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #393939;
+  background-color: #ececec;
+}
+
+/* Components */
+/* Pages */
+
+/*# sourceMappingURL=style.css.map */
