@@ -1,6 +1,16 @@
+// First Draft:
 // At least one conditional
 // At least one cycle
 // At least one function
+// ---
+// Second Draft:
+// HTML and CSS Structure needs to start approaching the final page
+// JS Variables
+// Essential functions
+// JS Objects
+// Arrays
+// Search and filter methods on the Array
+// ---
 
 // Create main variables
 let height;
