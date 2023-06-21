@@ -1,6 +1,6 @@
 /* General Styling */
 
 body {
-    background-image: linear-gradient(#354e58, #f59942);
-    font-family: 'Inter', sans-serif;
+    background-image: linear-gradient($top-color, $bottom-color);
+    font-family: $main-type;
 }
