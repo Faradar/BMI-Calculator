@@ -82,7 +82,7 @@ To do:
 
 ## Acknowledgements
 - This project was inspired by <a href="https://www.frontendmentor.io/challenges/body-mass-index-calculator-brrBkfSz1T" target="_blank" rel="noopener">Frontend Mentor</a>.
-- This project was based on <a href="https://jo-cloud85.github.io/body-mass-index-calculator/" target="_blank" rel="noopener">this project</a>.
+- This project was based on <a href="https://jo-cloud85.github.io/body-mass-index-calculator/" target="_blank" rel="noopener">this other project</a>.
 - Many thanks to Coderhouse for its course.
 
 
