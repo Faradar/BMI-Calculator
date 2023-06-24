@@ -2,5 +2,30 @@
 
 body {
     background-image: linear-gradient($top-color, $bottom-color);
+    color: white;
     font-family: $main-type;
+    font-size: 1rem;
+}
+
+header {
+    padding: 2.5em 1.5em;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 1em 0 0.5em;
+    letter-spacing: -2px;
+    line-height: 3.5rem;
+}
+
+.logo {
+    width: 3rem;
+
+    img {
+        filter: brightness(150%);
+    }
+}
+
+p {
+    line-height: 1.5rem;
 }
