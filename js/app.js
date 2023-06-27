@@ -14,9 +14,8 @@
 
 // Create a class for the users
 class User{
-    constructor(name, age, height, weight) {
+    constructor(name, height, weight) {
         this.name = name;
-        this.age = age;
         this.height = height;
         this.weight = weight;
     }
@@ -31,15 +30,10 @@ showResults();
 // Function to gather a persons data and enter those values into an array
 function getPersonData() {
     let name = prompt("Enter your name:");
-    let age;
     let height;
     let weight;
 
     // Cycles that check that the entered values in the prompts are correct
-    do {
-        age = parseInt(prompt("Enter your age:"));
-    } while (validateNumber(age));
-
     do {
         height = (parseFloat(prompt("Enter your height in cm"))) / 100; // Divided by 100 to go from cm to meters
     } while (validateNumber(height));
@@ -49,7 +43,7 @@ function getPersonData() {
     } while (validateNumber(weight));
 
     // Transform the gathered data into an object
-    let user = new User(name, age, height, weight);
+    let user = new User(name, height, weight);
 
     // Add that object to an array
     users.push(user);
