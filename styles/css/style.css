@@ -113,18 +113,63 @@ h1 {
   line-height: 3.5rem;
 }
 
-.logo {
+img {
   width: 3rem;
 }
-.logo img {
+
+.logo {
   filter: brightness(150%);
 }
 
-p {
+p, span {
   line-height: 1.5rem;
 }
 
+main {
+  padding: 0 1em 1em 1em;
+}
+
 /* Components */
+.input-section__measurement {
+  padding: 2rem 0 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.input-section__measurement label {
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  color: #d9d9d9;
+}
+.input-section__measurement input {
+  accent-color: #f59942;
+}
+
+.card {
+  background-color: #1f1f1f;
+  border-radius: 2em;
+  padding: 1em;
+}
+.card__title {
+  background-color: #424848;
+  border-radius: 2rem;
+  font-size: 1.25rem;
+  color: #d9d9d9;
+  height: 4rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+.card__title img {
+  width: 3.5rem;
+  border-radius: 50%;
+  background-color: #f59942;
+  padding: 0.75rem;
+}
+.card__title span {
+  padding-left: 1.5rem;
+}
+
 /* Pages */
 
 /*# sourceMappingURL=style.css.map */

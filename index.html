@@ -55,21 +55,23 @@
     <!-- Main -->
     <main>
     <!-- Section here that contains BMi calculations and the main interactive things of the page -->
-    <section class="input-section">
-        <div>
-            <img src="" alt="">
+    <section class="input-section card">
+        <div class="card__title">
+            <img src="img/arrow-down.png" alt="Icon of an arrow pointing downwards">
             <span>Enter your details below</span>
         </div>
 
-        <div>
-            <label for=""></label>
-            <input type="text">
+        <div class="input-section__measurement">
+            <label for="metric">Metric</label>
+            <input type="radio" id="metric">
         </div>
 
-        <div>
-            <label for=""></label>
-            <input type="text">
-            <span></span>
+        <div class="input-section__data">
+            <label for="height">Height</label>
+            <div>
+                <input type="number" id="height">
+                <span>cm</span>
+            </div>
 
             <label for=""></label>
             <input type="text">

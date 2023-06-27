@@ -2,7 +2,7 @@
 
 body {
     background-image: linear-gradient($top-color, $bottom-color);
-    color: white;
+    color: $text-color;
     font-family: $main-type;
     font-size: 1rem;
 }
@@ -18,14 +18,18 @@ h1 {
     line-height: 3.5rem;
 }
 
-.logo {
+img {
     width: 3rem;
-
-    img {
-        filter: brightness(150%);
-    }
 }
 
-p {
+.logo {
+    filter: brightness(150%);
+}
+
+p, span {
     line-height: 1.5rem;
+}
+
+main {
+    padding: 0 1em 1em 1em;
 }
