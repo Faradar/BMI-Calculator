@@ -1,0 +1,20 @@
+.input-section {
+
+    &__measurement {
+        padding: 2rem 0 2rem;
+
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+
+        label {
+            padding-left: 0.5rem;
+            font-size: 1rem;
+            color: $card-title-color;
+        }
+
+        input {
+            accent-color: $bottom-color;
+        }
+    }
+}
