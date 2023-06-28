@@ -29,11 +29,15 @@ showResults();
 
 // Function to gather a persons data and enter those values into an array
 function getPersonData() {
-    let name = prompt("Enter your name:");
+    let name;
     let height;
     let weight;
 
     // Cycles that check that the entered values in the prompts are correct
+    do {
+        name = prompt("Enter your name:");
+    } while (!name || name == '');
+
     do {
         height = (parseFloat(prompt("Enter your height in cm"))) / 100; // Divided by 100 to go from cm to meters
     } while (validateNumber(height));
