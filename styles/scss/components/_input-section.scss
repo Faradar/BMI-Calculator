@@ -1,4 +1,5 @@
 .input-section {
+    max-width: 500px;
 
     &__measurement {
         padding: 2rem 0 2rem;
@@ -42,7 +43,25 @@
     }
 
     &__result {
-        
+        background-color: $bottom-color;
+        color: $card-background-color;
+        font-weight: 600;
+        border-radius: .7rem;
+        padding: 1rem;
+    }
+
+    &__bmi-number {
+        font-size: 3rem;
+        padding: 2rem 0;
+    }
+
+    &__bmi-text {
+        font-size: .9rem;
+
+        span {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
     }
 }
 

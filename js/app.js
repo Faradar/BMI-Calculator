@@ -4,12 +4,12 @@
 // At least one function - Done
 // ---
 // Second Draft:
-// HTML and CSS Structure needs to start approaching the final page - In progress
+// HTML and CSS Structure needs to start approaching the final page - Done
 // JS Variables - Done
 // Essential functions - Done
 // JS Objects - Done
 // Arrays - Done
-// Search and filter methods on the Array - In progress
+// Search and filter methods on the Array - Deemed unnecessary
 // ---
 
 // Create a class for the users

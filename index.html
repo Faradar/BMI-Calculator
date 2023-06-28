@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Primary Meta Tags -->
     <title>Body Mass Index Calculator</title>
-    <meta name="description" content="Insert a description of the proyect">
-    <meta name="author" content="Insert the name of the author of the proyect / Tomás Echeveste Arteaga">
+    <meta name="description" content="Quickly calculate your BMI with our easy-to-use calculator. Stay healthy and track your fitness progress.">
+    <meta name="author" content="Tomás Echeveste Arteaga">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="">
     <meta property="og:url" content="">
@@ -56,16 +56,19 @@
     <main>
     <!-- Section here that contains BMi calculations and the main interactive things of the page -->
     <section class="input-section card">
+        <!-- Title div -->
         <div class="card__title">
             <img src="img/arrow-down.png" alt="Icon of an arrow pointing downwards">
             <span>Enter your details below</span>
         </div>
 
+        <!-- Measurement selection -->
         <div class="input-section__measurement">
             <label for="metric">Metric</label>
             <input type="radio" id="metric">
         </div>
 
+        <!-- Input area -->
         <div class="input-section__data">
             <label for="name">Name</label>
             <div class="input-section__name">
@@ -85,10 +88,11 @@
             </div>
         </div>
 
+        <!-- Final results are shown here -->
         <div class="input-section__result">
-            <span>Your BMI is...</span>
-            <span>NaN</span>
-            <p>Your BMI suggests you're an obese. Your ideal weight for your height is between 0.0kg - 0.0kg</p>
+            <p class="input-section__bmi">Your BMI is...</p>
+            <p class="input-section__bmi-number">NaN</p>
+            <p class="input-section__bmi-text">Your BMI suggests you're <span class="input-section__weight-name">an obese</span>. Your ideal weight for your height is between <span class="input-section__weight-number">0.0kg - 0.0kg</span></p>
         </div>
     </section>
 
@@ -113,6 +117,6 @@
     </main>
 
     <!-- JS -->
-    <!-- <script src="js/app.js"></script> -->
+    <script src="js/app.js"></script>
 </body>
 </html>

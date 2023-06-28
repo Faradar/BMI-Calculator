@@ -130,6 +130,9 @@ main {
 }
 
 /* Components */
+.input-section {
+  max-width: 500px;
+}
 .input-section__measurement {
   padding: 2rem 0 2rem;
   display: flex;
@@ -160,6 +163,25 @@ main {
   border-radius: 0.7rem;
   padding: 1rem;
 }
+.input-section__result {
+  background-color: #f59942;
+  color: #1f1f1f;
+  font-weight: 600;
+  border-radius: 0.7rem;
+  padding: 1rem;
+}
+.input-section__bmi-number {
+  font-size: 3rem;
+  padding: 2rem 0;
+}
+.input-section__bmi-text {
+  font-size: 0.9rem;
+}
+.input-section__bmi-text span {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* Hiding input number arrows */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
