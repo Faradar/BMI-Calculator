@@ -9,7 +9,7 @@
 // Essential functions - Done
 // JS Objects - Done
 // Arrays - Done
-// Search and filter methods on the Array - Deemed unnecessary
+// Search and filter methods on the Array - Done
 // ---
 
 // Create a class for the users
