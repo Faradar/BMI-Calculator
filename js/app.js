@@ -70,9 +70,7 @@ function showResults() {
     for (let i = 0; i < users.length; i++) {
         let user = users[i];
         let bmiResults = calculateBMI(user);
-        let bmi = bmiResults[0];
-        let healthyBmiFloor = bmiResults[1];
-        let healthyBmiCeil = bmiResults[2];
+        let [bmi, healthyBmiFloor, healthyBmiCeil] = bmiResults; //Destructured the array
 
         // Conditional that checks the resulting bmi and provides the type of weight associated with it
         if (bmi < 18.5) {
