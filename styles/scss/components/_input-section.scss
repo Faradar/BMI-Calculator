@@ -19,7 +19,7 @@
         }
     }
 
-    &__data {
+    &__form {
 
         label {
             color: $card-text-color;
@@ -39,6 +39,27 @@
             border: 1px solid $card-text-color;
             border-radius: .7rem;
             padding: 1rem;
+        }
+
+        span {
+            margin-left: 0.5rem;
+            line-height: 1.8rem;
+        }
+
+        button {
+            cursor: pointer;
+            margin: 1em auto;
+            width: 8rem;
+            border: solid 2px $bottom-color;
+            border-radius: .7rem;
+            font-size: 1.5rem;
+
+        &:hover {
+            color: $card-background-color;
+            background-color: $bottom-color;
+            transform: scale(1.2);
+            transition: background-color 1s, transform 1s;
+        }
         }
     }
 

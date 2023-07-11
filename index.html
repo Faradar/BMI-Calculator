@@ -68,31 +68,33 @@
             <input type="radio" id="metric">
         </div>
 
-        <!-- Input area -->
-        <div class="input-section__data">
+        <!-- Form area -->
+        <form class="input-section__form" id="form"> <!-- return false here to prevent form from submitting -->
             <label for="name">Name</label>
             <div class="input-section__name">
-                <input type="text" id="name">
+                <input type="text" id="name" placeholder="John" required>
             </div>
 
             <label for="height">Height</label>
             <div class="input-section__height">
-                <input type="number" id="height">
+                <input type="number" id="height" placeholder="175" required>
                 <span>cm</span>
             </div>
 
             <label for="weight">Weight</label>
             <div class="input-section__weight">
-                <input type="number" id="weight">
+                <input type="number" id="weight" placeholder="70" required>
                 <span>kg</span>
             </div>
-        </div>
+
+            <button class="input-section__button" id="button">Calculate</button>
+        </form>
 
         <!-- Final results are shown here -->
         <div class="input-section__result">
             <p class="input-section__bmi">Your BMI is...</p>
-            <p class="input-section__bmi-number">NaN</p>
-            <p class="input-section__bmi-text">Your BMI suggests you're <span class="input-section__weight-name">an obese</span>. Your ideal weight for your height is between <span class="input-section__weight-number">0.0kg - 0.0kg</span></p>
+            <p class="input-section__bmi-number" id="bmiNumber">NaN</p>
+            <p class="input-section__bmi-text" id="bmiText">Your BMI suggests you're <span class="input-section__weight-name">an obese</span>. Your ideal weight for your height is between <span class="input-section__weight-number">0.0kg - 0.0kg</span></p>
         </div>
     </section>
 

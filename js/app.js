@@ -11,6 +11,11 @@
 // Arrays - Done
 // Search and filter methods on the Array - Done
 // ---
+// Third Draft:
+// JSON and Local Storage - In Progress
+// DOM and events - In Progress
+// Maybe add the date class? (class 8)
+// ---
 
 // Create a class for the users
 class User{
@@ -24,46 +29,29 @@ class User{
 // Declare array to store user objects
 let users = [];
 
-getPersonData();
-showResults();
+// Get necessary DOM elements
+const form = document.getElementById('form');
+
+// Add an event listener for when the form is submitted
+form.addEventListener('submit', getPersonData);
 
 // Function to gather a persons data and enter those values into an array
-function getPersonData() {
-    let name;
-    let height;
-    let weight;
+function getPersonData(e) {
+    // Stop the form from submitting
+    e.preventDefault();
 
-    // Cycles that check that the entered values in the prompts are correct
-    do {
-        name = prompt("Enter your name:");
-    } while (!name || name == '');
-
-    do {
-        height = (parseFloat(prompt("Enter your height in cm"))) / 100; // Divided by 100 to go from cm to meters
-    } while (validateNumber(height));
-
-    do {
-        weight = parseFloat(prompt("Enter your weight in kg"));
-    } while (validateNumber(weight));
+    // Gather the data
+    let name = document.getElementById('name').value;
+    let height = parseFloat(document.getElementById('height').value) / 100; // Divided by 100 to go from cm to meters
+    let weight = parseFloat(document.getElementById('weight').value);
 
     // Transform the gathered data into an object
     let user = new User(name, height, weight);
 
     // Add that object to an array
     users.push(user);
-}
 
-// Function that validates whether the argument is a positive number.
-function validateNumber(number) {
-    if (isNaN(number)) {
-        alert("You did not enter a number, please try again");
-        return true;
-    } else if (number <= 0) {
-        alert("Positive numbers only please");
-        return true;
-    } else {
-        return false;
-    }
+    showResults();
 }
 
 function showResults() {
@@ -71,16 +59,20 @@ function showResults() {
         let user = users[i];
         let bmiResults = calculateBMI(user);
         let [bmi, healthyBmiFloor, healthyBmiCeil] = bmiResults; //Destructured the array
+        document.getElementById('bmiNumber').innerText = bmi;
 
         // Conditional that checks the resulting bmi and provides the type of weight associated with it
-        if (bmi < 18.5) {
-            alert(`${user.name}, your BMI is: ${bmi}\nIt suggests you're underweight. The ideal weight for your height is between ${healthyBmiFloor}kg - ${healthyBmiCeil}kg`);
+        if (isNaN(bmi) || bmi <= 0) {
+            document.getElementById('bmiNumber').innerText = "Impossible";
+            document.getElementById('bmiText').innerHTML = `${user.name}, the numbers you provided seem to be wrong. Please make sure you are entering the correct positive numbers for your height and weight.`;
+        } else if (bmi < 18.5) {
+            document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">underweight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
         } else if (bmi >= 18.5 && bmi < 25) {
-            alert(`${user.name}, your BMI is: ${bmi}\nIt suggests you have a healthy weight. The ideal weight for your height is between ${healthyBmiFloor}kg - ${healthyBmiCeil}kg`);
+            document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you have a <span class="input-section__weight-name">healthy weight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
         } else if (bmi >= 25 && bmi < 30) {
-            alert(`${user.name}, your BMI is: ${bmi}\nIt suggests you're overweight. The ideal weight for your height is between ${healthyBmiFloor}kg - ${healthyBmiCeil}kg`);
+            document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">overweight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
         } else {
-            alert(`${user.name}, your BMI is: ${bmi}\nIt suggests you're obese. The ideal weight for your height is between ${healthyBmiFloor}kg - ${healthyBmiCeil}kg`);
+            document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">obese</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
         }
     }
 }

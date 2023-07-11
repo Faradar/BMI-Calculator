@@ -147,14 +147,14 @@ main {
 .input-section__measurement input {
   accent-color: #f59942;
 }
-.input-section__data label {
+.input-section__form label {
   color: #999999;
 }
-.input-section__data input {
+.input-section__form input {
   outline: none;
   width: 90%;
 }
-.input-section__data div {
+.input-section__form div {
   display: flex;
   width: 100%;
   height: 4rem;
@@ -162,6 +162,24 @@ main {
   border: 1px solid #999999;
   border-radius: 0.7rem;
   padding: 1rem;
+}
+.input-section__form span {
+  margin-left: 0.5rem;
+  line-height: 1.8rem;
+}
+.input-section__form button {
+  cursor: pointer;
+  margin: 1em auto;
+  width: 8rem;
+  border: solid 2px #f59942;
+  border-radius: 0.7rem;
+  font-size: 1.5rem;
+}
+.input-section__form button:hover {
+  color: #1f1f1f;
+  background-color: #f59942;
+  transform: scale(1.2);
+  transition: background-color 1s, transform 1s;
 }
 .input-section__result {
   background-color: #f59942;
