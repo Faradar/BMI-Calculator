@@ -1,0 +1,29 @@
+/* ---------- Media Queries ---------- */
+
+/* 600px */
+@mixin mobile-lg {
+	@media screen and (min-width: 37.5em) {
+		@content;
+	}
+}
+
+/* 768px */
+@mixin tablet {
+	@media screen and (min-width: 48em) {
+		@content;
+	}
+}
+
+/* 1200px */
+@mixin desktop {
+	@media screen and (min-width: 75em) {
+		@content;
+	}
+}
+
+/* 1312px */
+@mixin desktop-lg {
+	@media screen and (min-width: 84em) {
+		@content;
+	}
+}

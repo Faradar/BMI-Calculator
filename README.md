@@ -1,7 +1,8 @@
-# PreEntrega2-Echeveste-Arteaga
+# PreEntrega3-Echeveste-Arteaga
 > Body mass index (BMI) tool desgined as the main project of the <a href="https://www.coderhouse.com/collections/categoria-programacion-y-desarrollo/products/javascript" target="_blank" rel="noopener">Coderhouse JavaScript course</a>. What's mainly put in practice here is JS in combination with HTML and CSS that I've learned on the previous course.
 
-> Live demo [_here_](https://faradar.github.io/PreEntrega2-Echeveste-Arteaga/).
+> Live demo [_here_](https://faradar.github.io/PreEntrega3-Echeveste-Arteaga/).
+
 
 ## Table of Contents
 * [General Info](#general-info)
@@ -19,7 +20,7 @@
 
 ## General Info
 This project is a simple BMI calculator.
-- Simply insert your height and your weight and it will do the rest.
+- Simply insert your name, your height and your weight and click calculate!
 
 
 ## Technologies
@@ -31,11 +32,15 @@ Project is created with:
 
 
 ## Features
-- None worth mentioning yet
+- Calculates BMI
+- Suggests ideal weight based on height
+- Remembers your last inputed values for your next session
+- Mobile First
+- Responsive for mobile and mobile large (320-600 px), not for pc yet.
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](https://i.imgur.com/irYmgEz.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 
@@ -44,8 +49,9 @@ Project is: _in progress_.
 
 
 ## To-do list
-- Make it responsive.
-- Incorporate the JS to the DOM
+- Make it responsive for pc.
+- Incorporate libraries.
+- Add user data as they search below so they can see there previous searches (and have a way for them to clear it as well).
 
 
 ## Acknowledgements

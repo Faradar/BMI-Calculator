@@ -94,6 +94,11 @@ body {
 
 /* Colors */
 /* Typography */
+/* ---------- Media Queries ---------- */
+/* 600px */
+/* 768px */
+/* 1200px */
+/* 1312px */
 /* General Styling */
 body {
   background-image: linear-gradient(#354e58, #f59942);
@@ -102,39 +107,62 @@ body {
   font-size: 1rem;
 }
 
-header {
-  padding: 2.5em 1.5em;
-}
-
-h1 {
-  font-size: 3rem;
-  margin: 1em 0 0.5em;
-  letter-spacing: -2px;
-  line-height: 3.5rem;
-}
-
-img {
-  width: 3rem;
-}
-
-.logo {
-  filter: brightness(150%);
-}
-
 p, span {
   line-height: 1.5rem;
 }
 
 main {
-  padding: 0 1em 1em 1em;
+  padding: 0 1rem 1rem 1rem;
+}
+@media screen and (min-width: 37.5em) {
+  main {
+    padding: 0 2.5rem 2.5rem 2.5rem;
+  }
+} /* Components */
+header {
+  padding: 2.5em 1.5em;
+}
+@media screen and (min-width: 37.5em) {
+  header {
+    padding: 2.5em 2.5em;
+  }
+}
+header h1 {
+  font-size: 3rem;
+  margin: 1em 0 0.5em;
+  letter-spacing: -2px;
+  line-height: 3.5rem;
+  max-width: 350px;
+}
+@media screen and (min-width: 37.5em) {
+  header h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    max-width: 400px;
+  }
+}
+header img {
+  width: 3rem;
+}
+@media screen and (min-width: 37.5em) {
+  header img {
+    width: 3.5rem;
+  }
+}
+header .logo {
+  filter: brightness(150%);
+}
+header p {
+  max-width: 700px;
+}
+@media screen and (min-width: 37.5em) {
+  header p {
+    font-size: 1.1rem;
+  }
 }
 
-/* Components */
-.input-section {
-  max-width: 500px;
-}
 .input-section__measurement {
-  padding: 2rem 0 2rem;
+  padding: 2rem 0.2rem 2rem;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -149,10 +177,11 @@ main {
 }
 .input-section__form label {
   color: #999999;
+  padding-left: 0.2rem;
 }
 .input-section__form input {
   outline: none;
-  width: 90%;
+  width: 100%;
 }
 .input-section__form div {
   display: flex;
@@ -179,7 +208,35 @@ main {
   color: #1f1f1f;
   background-color: #f59942;
   transform: scale(1.2);
-  transition: background-color 1s, transform 1s;
+  transition: background-color 0.5s, transform 0.2s;
+}
+@media screen and (min-width: 37.5em) {
+  .input-section__form {
+    display: grid;
+    grid-template-areas: "lname lname lname" "name name name" "lheight . lweight" "height . weight" "button button button";
+    grid-template-columns: 1fr 1rem 1fr;
+  }
+  .input-section__form .input-section__name {
+    grid-area: name;
+  }
+  .input-section__form .input-section__height {
+    grid-area: height;
+  }
+  .input-section__form .input-section__weight {
+    grid-area: weight;
+  }
+  .input-section__form .input-section__button {
+    grid-area: button;
+  }
+  .input-section__form .input-section__label-name {
+    grid-area: lname;
+  }
+  .input-section__form .input-section__label-height {
+    grid-area: lheight;
+  }
+  .input-section__form .input-section__label-weight {
+    grid-area: lweight;
+  }
 }
 .input-section__result {
   background-color: #f59942;
@@ -187,6 +244,20 @@ main {
   font-weight: 600;
   border-radius: 0.7rem;
   padding: 1rem;
+}
+@media screen and (min-width: 37.5em) {
+  .input-section__result {
+    border-radius: 1rem 10rem 10rem 1rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .input-section__result .input-section__bmi-text {
+    max-width: 200px;
+    line-height: 1rem;
+    margin-right: 2rem;
+  }
 }
 .input-section__bmi-number {
   font-size: 3rem;

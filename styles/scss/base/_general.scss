@@ -7,29 +7,14 @@ body {
     font-size: 1rem;
 }
 
-header {
-    padding: 2.5em 1.5em;
-}
-
-h1 {
-    font-size: 3rem;
-    margin: 1em 0 0.5em;
-    letter-spacing: -2px;
-    line-height: 3.5rem;
-}
-
-img {
-    width: 3rem;
-}
-
-.logo {
-    filter: brightness(150%);
-}
-
 p, span {
     line-height: 1.5rem;
 }
 
 main {
-    padding: 0 1em 1em 1em;
+    padding: 0 1rem 1rem 1rem;
+
+    @include mobile-lg {
+        padding: 0 2.5rem 2.5rem 2.5rem;
+    }
 }

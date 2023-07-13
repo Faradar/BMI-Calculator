@@ -29,14 +29,11 @@ class User{
 // Declare array to store user objects
 let users = [];
 
-// Get necessary DOM elements
-const form = document.getElementById('form');
+// Execute this function upon startup
+remember();
 
-// Add an event listener for when the form is submitted
-form.addEventListener('submit', getPersonData);
-
-// Function to gather a persons data and enter those values into an array
-function getPersonData(e) {
+// Get the form element and trigger a function upon its submission
+document.getElementById('form').addEventListener('submit', (e) => {
     // Stop the form from submitting
     e.preventDefault();
 
@@ -52,7 +49,7 @@ function getPersonData(e) {
     users.push(user);
 
     showResults();
-}
+});
 
 function showResults() {
     for (let i = 0; i < users.length; i++) {
@@ -63,7 +60,7 @@ function showResults() {
 
         // Conditional that checks the resulting bmi and provides the type of weight associated with it
         if (isNaN(bmi) || bmi <= 0) {
-            document.getElementById('bmiNumber').innerText = "Impossible";
+            document.getElementById('bmiNumber').innerText = "Wrong";
             document.getElementById('bmiText').innerHTML = `${user.name}, the numbers you provided seem to be wrong. Please make sure you are entering the correct positive numbers for your height and weight.`;
         } else if (bmi < 18.5) {
             document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">underweight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
@@ -74,6 +71,8 @@ function showResults() {
         } else {
             document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">obese</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
         }
+
+        localStorage.setItem('user', JSON.stringify(user));
     }
 }
 
@@ -84,4 +83,14 @@ function calculateBMI(user) {
     let healthyBmiCeil = (24.9 * Math.pow(user.height, 2)).toFixed(1);
     let bmiResults = [bmi, healthyBmiFloor, healthyBmiCeil]
     return bmiResults;
+}
+
+// Function to enter the last used valued automatically
+function remember() {
+    let user = JSON.parse(localStorage.getItem('user'));
+
+    // Remember the data
+    document.getElementById('name').value = user?.name || '';
+    document.getElementById('height').value = user?.height * 100 || ''; // Multiplied by 100 to go from meters to cm
+    document.getElementById('weight').value = user?.weight || '';
 }

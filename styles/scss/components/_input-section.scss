@@ -1,8 +1,7 @@
 .input-section {
-    max-width: 500px;
 
     &__measurement {
-        padding: 2rem 0 2rem;
+        padding: 2rem .2rem 2rem;
 
         display: flex;
         flex-direction: row-reverse;
@@ -23,11 +22,12 @@
 
         label {
             color: $card-text-color;
+            padding-left: .2rem;
         }
 
         input {
             outline: none;
-            width: 90%;
+            width: 100%;
         }
 
         div {
@@ -54,12 +54,57 @@
             border-radius: .7rem;
             font-size: 1.5rem;
 
-        &:hover {
-            color: $card-background-color;
-            background-color: $bottom-color;
-            transform: scale(1.2);
-            transition: background-color 1s, transform 1s;
+            &:hover {
+                color: $card-background-color;
+                background-color: $bottom-color;
+                transform: scale(1.2);
+                transition: background-color .5s, transform .2s;
+            }
         }
+
+        @include mobile-lg {
+            display: grid;
+            grid-template-areas:
+                "lname lname lname"
+                "name name name"
+                "lheight . lweight"
+                "height . weight"
+                "button button button";
+            grid-template-columns: 1fr 1rem 1fr;
+
+            .input-section {
+
+                &__name {
+                    grid-area: name;
+                }
+
+                &__height {
+                    grid-area: height;
+                }
+
+                &__weight {
+                    grid-area: weight;
+                }
+
+                &__button {
+                    grid-area: button;
+                }
+
+                &__label {
+
+                    &-name {
+                        grid-area: lname;
+                    }
+
+                    &-height {
+                        grid-area: lheight;
+                    }
+
+                    &-weight {
+                        grid-area: lweight;
+                    }
+                }
+            }
         }
     }
 
@@ -69,6 +114,21 @@
         font-weight: 600;
         border-radius: .7rem;
         padding: 1rem;
+
+        @include mobile-lg {
+            border-radius: 1rem 10rem 10rem 1rem;
+            padding: 1.5rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .input-section__bmi-text {
+                max-width: 200px;
+                line-height: 1rem;
+                margin-right: 2rem;
+            }
+        }
     }
 
     &__bmi-number {
