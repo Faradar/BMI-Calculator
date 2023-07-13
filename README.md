@@ -52,6 +52,7 @@ Project is: _in progress_.
 - Make it responsive for pc.
 - Incorporate libraries.
 - Add user data as they search below so they can see there previous searches (and have a way for them to clear it as well).
+- Add a date class to the data as well.
 
 
 ## Acknowledgements

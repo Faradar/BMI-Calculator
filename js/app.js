@@ -12,9 +12,8 @@
 // Search and filter methods on the Array - Done
 // ---
 // Third Draft:
-// JSON and Local Storage - In Progress
-// DOM and events - In Progress
-// Maybe add the date class? (class 8)
+// JSON and Local Storage - Done
+// DOM and events - Done
 // ---
 
 // Create a class for the users
