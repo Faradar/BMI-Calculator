@@ -8,7 +8,7 @@ body {
 }
 
 p, span {
-    line-height: 1.5rem;
+    line-height: 1.2rem;
 }
 
 main {
@@ -16,5 +16,18 @@ main {
 
     @include mobile-lg {
         padding: 0 2.5rem 2.5rem 2.5rem;
+    }
+
+    @include desktop {
+        padding-top: 2.5em;
+    }
+}
+
+body {
+
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
     }
 }

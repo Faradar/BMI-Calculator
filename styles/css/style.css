@@ -108,7 +108,7 @@ body {
 }
 
 p, span {
-  line-height: 1.5rem;
+  line-height: 1.2rem;
 }
 
 main {
@@ -118,13 +118,33 @@ main {
   main {
     padding: 0 2.5rem 2.5rem 2.5rem;
   }
-} /* Components */
+}
+@media screen and (min-width: 75em) {
+  main {
+    padding-top: 2.5em;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  body {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+}
+
+/* Components */
 header {
   padding: 2.5em 1.5em;
 }
 @media screen and (min-width: 37.5em) {
   header {
     padding: 2.5em 2.5em;
+  }
+}
+@media screen and (min-width: 75em) {
+  header {
+    padding-top: 5em;
   }
 }
 header h1 {
@@ -154,6 +174,7 @@ header .logo {
 }
 header p {
   max-width: 700px;
+  line-height: 1.7rem;
 }
 @media screen and (min-width: 37.5em) {
   header p {
@@ -161,6 +182,9 @@ header p {
   }
 }
 
+.input-section {
+  max-width: 700px;
+}
 .input-section__measurement {
   padding: 2rem 0.2rem 2rem;
   display: flex;
@@ -238,6 +262,12 @@ header p {
     grid-area: lweight;
   }
 }
+@media screen and (min-width: 48em) {
+  .input-section__form {
+    grid-template-areas: "lname . lheight . lweight" "name . height . weight" "button button button button button";
+    grid-template-columns: repeat(2, 1fr 1rem) 1fr;
+  }
+}
 .input-section__result {
   background-color: #f59942;
   color: #1f1f1f;
@@ -249,19 +279,79 @@ header p {
   .input-section__result {
     border-radius: 1rem 10rem 10rem 1rem;
     padding: 1.5rem;
+    padding-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .input-section__result .input-section__bmi-text {
-    max-width: 200px;
-    line-height: 1rem;
-    margin-right: 2rem;
+}
+@media screen and (min-width: 48em) {
+  .input-section__result {
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  .input-section__result div {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 75em) {
+  .input-section__result {
+    justify-content: space-between;
+    padding: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .input-section__result div {
+    display: block;
+  }
+}
+@media screen and (min-width: 84em) {
+  .input-section__result {
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  .input-section__result div {
+    display: flex;
+    align-items: center;
+  }
+}
+.input-section__bmi {
+  width: 100px;
+}
+@media screen and (min-width: 48em) {
+  .input-section__bmi {
+    margin: 0 2rem 0 2rem;
+  }
+}
+@media screen and (min-width: 75em) {
+  .input-section__bmi {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 84em) {
+  .input-section__bmi {
+    margin: 0 1.1rem 0 1.1rem;
   }
 }
 .input-section__bmi-number {
   font-size: 3rem;
   padding: 2rem 0;
+}
+@media screen and (min-width: 48em) {
+  .input-section__bmi-number {
+    margin: 0 2rem 0 2rem;
+  }
+}
+@media screen and (min-width: 75em) {
+  .input-section__bmi-number {
+    font-size: 4rem;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 84em) {
+  .input-section__bmi-number {
+    margin: 0 1.1rem 0 1.1rem;
+  }
 }
 .input-section__bmi-text {
   font-size: 0.9rem;
@@ -269,6 +359,28 @@ header p {
 .input-section__bmi-text span {
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+@media screen and (min-width: 37.5em) {
+  .input-section__bmi-text {
+    width: 90%;
+    max-width: 250px;
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 48em) {
+  .input-section__bmi-text {
+    margin: 0 2rem 0 2rem;
+  }
+}
+@media screen and (min-width: 75em) {
+  .input-section__bmi-text {
+    margin: 0 1rem 0 5rem;
+  }
+}
+@media screen and (min-width: 84em) {
+  .input-section__bmi-text {
+    margin: 0 1.1rem 0 1.1rem;
+  }
 }
 
 /* Hiding input number arrows */

@@ -41,82 +41,82 @@
     <!-- Header -->
     <header>
         <!-- Logo -->
-    <div class="logo" id="web-logo">
-        <img src="./img/logo.svg" class="logo__img" alt="Website logo">
-    </div>
+        <div class="logo" id="web-logo">
+            <img src="./img/logo.svg" class="logo__img" alt="Website logo">
+        </div>
 
-    <!-- Main Title -->
-    <h1>Body Mass Index Calculator</h1>
+        <!-- Main Title -->
+        <h1>Body Mass Index Calculator</h1>
 
-    <p>Better understand your weight in relation to your height using our body mass index (BM) calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point to evaluate your overall health and well-being.</p>
+        <p>Better understand your weight in relation to your height using our body mass index (BM) calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point to evaluate your overall health and well-being.</p>
 
     </header>
 
     <!-- Main -->
     <main>
-    <!-- Section here that contains BMi calculations and the main interactive things of the page -->
-    <section class="input-section card">
-        <!-- Title div -->
-        <div class="card__title">
-            <img src="img/arrow-down.png" alt="Icon of an arrow pointing downwards">
-            <span>Enter your details below</span>
-        </div>
-
-        <!-- Measurement selection -->
-        <div class="input-section__measurement">
-            <label for="metric">Metric</label>
-            <input type="radio" id="metric">
-        </div>
-
-        <!-- Form area -->
-        <form class="input-section__form" id="form"> <!-- return false here to prevent form from submitting -->
-            <label for="name" class="input-section__label-name">Name</label>
-            <div class="input-section__name">
-                <input type="text" id="name" placeholder="John" required>
+        <!-- Section here that contains BMi calculations and the main interactive things of the page -->
+        <section class="input-section card">
+            <!-- Title div -->
+            <div class="card__title">
+                <img src="img/arrow-down.png" alt="Icon of an arrow pointing downwards">
+                <span>Enter your details below</span>
             </div>
 
-            <label for="height" class="input-section__label-height">Height</label>
-            <div class="input-section__height">
-                <input type="number" id="height" placeholder="175" required>
-                <span>cm</span>
+            <!-- Measurement selection -->
+            <div class="input-section__measurement">
+                <label for="metric">Metric</label>
+                <input type="radio" id="metric">
             </div>
 
-            <label for="weight" class="input-section__label-weight">Weight</label>
-            <div class="input-section__weight">
-                <input type="number" id="weight" placeholder="70" required>
-                <span>kg</span>
+            <!-- Form area -->
+            <form class="input-section__form" id="form"> <!-- return false here to prevent form from submitting -->
+                <label for="name" class="input-section__label-name">Name</label>
+                <div class="input-section__name">
+                    <input type="text" id="name" placeholder="John" required>
+                </div>
+
+                <label for="height" class="input-section__label-height">Height</label>
+                <div class="input-section__height">
+                    <input type="number" id="height" placeholder="175" required>
+                    <span>cm</span>
+                </div>
+
+                <label for="weight" class="input-section__label-weight">Weight</label>
+                <div class="input-section__weight">
+                    <input type="number" id="weight" placeholder="70" required>
+                    <span>kg</span>
+                </div>
+
+                <button class="input-section__button" id="button">Calculate</button>
+            </form>
+
+            <!-- Final results are shown here -->
+            <div class="input-section__result">
+                <div>
+                <p class="input-section__bmi">Your BMI is...</p>
+                <p class="input-section__bmi-number" id="bmiNumber">NaN</p>
+                </div>
+                <p class="input-section__bmi-text" id="bmiText">Your BMI suggests you're <span class="input-section__weight-name">an obese</span>. Your ideal weight for your height is between <span class="input-section__weight-number">0.0kg - 0.0kg</span></p>
             </div>
+        </section>
 
-            <button class="input-section__button" id="button">Calculate</button>
-        </form>
+        <!-- Section here that says what the BMI means and a picture -->
 
-        <!-- Final results are shown here -->
-        <div class="input-section__result">
-            <div>
-            <p class="input-section__bmi">Your BMI is...</p>
-            <p class="input-section__bmi-number" id="bmiNumber">NaN</p>
-            </div>
-            <p class="input-section__bmi-text" id="bmiText">Your BMI suggests you're <span class="input-section__weight-name">an obese</span>. Your ideal weight for your height is between <span class="input-section__weight-number">0.0kg - 0.0kg</span></p>
-        </div>
-    </section>
+        <!-- Section here for the health tips -->
 
-    <!-- Section here that says what the BMI means and a picture -->
+        <!-- Another title -->
 
-    <!-- Section here for the health tips -->
+        <!-- Another paragraph -->
 
-    <!-- Another title -->
+        <!-- Section of gender -->
 
-    <!-- Another paragraph -->
+        <!-- Section of age -->
 
-    <!-- Section of gender -->
+        <!-- Section of Muscle -->
 
-    <!-- Section of age -->
+        <!-- Section of Pregnancy -->
 
-    <!-- Section of Muscle -->
-
-    <!-- Section of Pregnancy -->
-
-    <!-- Section of Race -->
+        <!-- Section of Race -->
 
     </main>
 

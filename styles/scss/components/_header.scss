@@ -5,6 +5,10 @@ header {
         padding: 2.5em 2.5em;
     }
 
+    @include desktop {
+        padding-top: 5em;
+    }
+
     h1 {
         font-size: 3rem;
         margin: 1em 0 0.5em;
@@ -35,6 +39,7 @@ header {
 
     p {
         max-width: 700px;
+        line-height: 1.7rem;
 
         @include mobile-lg {
             font-size: 1.1rem;

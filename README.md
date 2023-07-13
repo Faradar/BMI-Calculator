@@ -38,7 +38,7 @@ Project is created with:
 - Suggests ideal weight based on height
 - Remembers your last inputed values for your next session
 - Mobile First
-- Responsive for mobile and mobile large (320-600 px), not for pc yet.
+- Fully responsive.
 
 
 ## Screenshots
@@ -51,7 +51,6 @@ Project is: _in progress_.
 
 
 ## To-do list
-- Make it responsive for pc.
 - Incorporate libraries.
 - Add user data as they search below so they can see there previous searches (and have a way for them to clear it as well).
 - Add a date class to the data as well.
