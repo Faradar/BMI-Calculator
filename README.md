@@ -1,7 +1,9 @@
 # PreEntrega3-Echeveste-Arteaga
 > Body mass index (BMI) tool desgined as the main project of the <a href="https://www.coderhouse.com/collections/categoria-programacion-y-desarrollo/products/javascript" target="_blank" rel="noopener">Coderhouse JavaScript course</a>. What's mainly put in practice here is JS in combination with HTML and CSS that I've learned on the previous course.
 
-> Live demo [_here_](https://faradar.github.io/PreEntrega3-Echeveste-Arteaga/).
+> Live demo [_here_](https://bmi-calculator-faradar.vercel.app/).
+
+> Alternative [_here_](https://faradar.github.io/PreEntrega3-Echeveste-Arteaga/).
 
 
 ## Table of Contents
