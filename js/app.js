@@ -15,6 +15,12 @@
 // JSON and Local Storage - Done
 // DOM and events - Done
 // ---
+// Final Draft:
+// Incorporate libraries: Sweet alert could be used to decide whether or not to delete one of the added info. Toastify could be used to add a little alert saying it was deleted
+// ?
+// Maybe incorporate the date class to add a date to each calculated thing. I could use the luxon library for this
+// Add a cross button to it so it can be deleted (combine with sweet alert library here)
+// ---
 
 // Create a class for the users
 class User{
