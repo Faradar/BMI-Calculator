@@ -26,8 +26,10 @@ main {
 body {
 
     @include desktop {
-        display: flex;
-        justify-content: center;
+        display: grid;
         margin-top: 5rem;
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 600px 95px;
     }
 }

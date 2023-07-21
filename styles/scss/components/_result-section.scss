@@ -1,0 +1,17 @@
+.result-section {
+    grid-column: span 2;
+
+    margin: 0 1rem 2rem;
+
+    @include mobile-lg {
+        margin: 0 2.5rem 2.5rem;
+    }
+
+    @include tablet {
+        max-width: 700px;
+    }
+
+    @include desktop {
+        max-width: none;
+    }
+}
