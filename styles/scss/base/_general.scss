@@ -5,10 +5,19 @@ body {
     color: $text-color;
     font-family: $main-type;
     font-size: 1rem;
+
+    .main-div {
+        @include desktop {
+            display: grid;
+            margin-top: 2rem;
+
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
 
 p, span {
-    line-height: 1.2rem;
+    line-height: 1.5rem;
 }
 
 main {
@@ -20,16 +29,5 @@ main {
 
     @include desktop {
         padding-top: 2.5em;
-    }
-}
-
-body {
-
-    @include desktop {
-        display: grid;
-        margin-top: 5rem;
-
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 600px 95px;
     }
 }

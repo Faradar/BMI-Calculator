@@ -106,9 +106,16 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
 }
+@media screen and (min-width: 75em) {
+  body .main-div {
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 p, span {
-  line-height: 1.2rem;
+  line-height: 1.5rem;
 }
 
 main {
@@ -122,15 +129,6 @@ main {
 @media screen and (min-width: 75em) {
   main {
     padding-top: 2.5em;
-  }
-}
-
-@media screen and (min-width: 75em) {
-  body {
-    display: grid;
-    margin-top: 5rem;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 600px 95px;
   }
 }
 
@@ -185,20 +183,6 @@ header p {
 
 .input-section {
   max-width: 700px;
-}
-.input-section__measurement {
-  padding: 2rem 0.2rem 2rem;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-}
-.input-section__measurement label {
-  padding-left: 0.5rem;
-  font-size: 1rem;
-  color: #d9d9d9;
-}
-.input-section__measurement input {
-  accent-color: #f59942;
 }
 .input-section__form label {
   color: #999999;
@@ -407,6 +391,7 @@ input[type=number] {
   border-radius: 2rem;
   font-size: 1.25rem;
   color: #d9d9d9;
+  margin-bottom: 1rem;
   height: 4rem;
   padding: 0.25rem;
   display: flex;
@@ -440,6 +425,28 @@ input[type=number] {
   .result-section {
     max-width: none;
   }
+}
+.result-section__div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  line-height: 10rem;
+  min-height: 4.5rem;
+}
+.result-section__button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: font-size 0.5s;
+  padding-left: 1rem;
+}
+.result-section__button:hover {
+  font-size: 2rem;
+  padding-left: 0.5rem;
+}
+.result-section__bmi {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Pages */

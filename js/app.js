@@ -16,29 +16,26 @@
 // DOM and events - Done
 // ---
 // Final Draft:
-// Incorporate libraries: Sweet alert could be used to decide whether or not to delete one of the added info. Toastify could be used to add a little alert saying it was deleted
-// ?
-// Maybe incorporate the date class to add a date to each calculated thing. I could use the luxon library for this
-// Add a cross button to it so it can be deleted (combine with sweet alert library here)
-// Make the initial page not give a NaN BMI but rather have a message there that says "this is where your result will be displayed" or something like that
+// Incorporate libraries - Done
+// Funcion async-await, con fetch a un archivo JSON y que haga uso del try ... catch. Posiblemente agregar un finally (parte de las promesas) y del try catch, fijarse cual tiene sentido usar (probablemente el de try catch).
+// una idea es usar la libreria de sweet alert para cuando la respuesta este mal, tipo si el fetch no llega
+// implementar email js para enviar mails y demas? mas en la clase 16. es un api que permite que te manden un mail
+// Ver si hay errores 404, si los hay hacerlos lindos (tipo con un sweet alert)
+// El flujo del local storage tiene que ser setitem, getitem y el remove. Son 3 pasos.
+// Sin codigo comentado
+// Sin console log
+// Revisar que todo lo de la primera, second y third draft sigue estando completo
+// Hacer una revision final del powerpoint de la clase 17 para revisar que cumpli con todo lo pedido de ahi tambien
+// limit the amount of digits you can put in the height and weight inputs, add a possible comma to this limitation. Maybe add a sweet alert popup when you try to write while on the limit
+// add good commentary to the html, sass and js code
 // ---
-
-// Al body le tengo que agregar esto:
-/*
-<section class="result-section card">
-    <p>asd</p>
-</section>
-*/
-// y dentro del parrafo tiene que estar la informacion del usuario
-
-
-
 
 // Execute this function upon startup
 remember();
 
 // Get the form element and trigger a function upon its submission
-document.getElementById('form').addEventListener('submit', (e) => {
+const formSubmit = document.getElementById('form');
+formSubmit.addEventListener('submit', (e) => {
     // Stop the form from submitting
     e.preventDefault();
 
@@ -56,3 +53,43 @@ document.getElementById('form').addEventListener('submit', (e) => {
     // Once all is done go to the next function
     showResults();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Add event listener to the weight input
+// const weightInput = document.getElementById('weight');
+// weightInput.addEventListener('input', limitDigits);
+
+// const heightInput = document.getElementById('height');
+// heightInput.addEventListener('input', (event) => limitDigits(event, 3));
+
+// function limitDigits(event) {
+//     const input = event.target;
+//     const value = input.value;
+//     const maxLength = value.includes(',') ? 4 : 3;
+
+//     // Remove any non-digit characters from the input
+//     const digitsOnly = value.replace(/[^\d.,]/g, '');
+
+//     // Limit the number of digits to maxLength
+//     const limitedValue = digitsOnly.slice(0, maxLength);
+
+//     // Update the input value with the limited digits
+//     input.value = limitedValue;
+
+//     // Set the cursor position back to the end (for number inputs)
+//     input.setSelectionRange(0, 0);
+// }

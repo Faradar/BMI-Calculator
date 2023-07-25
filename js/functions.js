@@ -10,32 +10,30 @@ function remember() {
 }
 
 function showResults() {
-    for (let i = 0; i < users.length; i++) {
-        let user = users[i];
-        let bmiResults = calculateBMI(user);
-        let [bmi, healthyBmiFloor, healthyBmiCeil] = bmiResults; //Destructured the array
-        user.bmi = bmi;
-        document.getElementById('bmiNumber').innerText = bmi;
+    let user = users[users.length - 1];
+    let bmiResults = calculateBMI(user);
+    let [bmi, healthyBmiFloor, healthyBmiCeil] = bmiResults; //Destructured the array
+    user.bmi = bmi;
+    document.getElementById('bmiNumber').innerText = bmi;
 
-        // Conditional that checks the resulting bmi and provides the type of weight associated with it in the DOM
-        if (isNaN(bmi) || bmi <= 0) { // If the bmi results in a silly value
-            document.getElementById('bmiNumber').innerText = "Wrong";
-            document.getElementById('bmiText').innerHTML = `${user.name}, the numbers you provided seem to be wrong. Please make sure you are entering the correct positive numbers for your height and weight.`;
-        } else if (bmi < 18.5) {
-            document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">underweight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
-        } else if (bmi >= 18.5 && bmi < 25) {
-            document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you have a <span class="input-section__weight-name">healthy weight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
-        } else if (bmi >= 25 && bmi < 30) {
-            document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">overweight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
-        } else {
-            document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">obese</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
-        }
-
-        // Save the last inputed values in the local storage
-        localStorage.setItem('user', JSON.stringify(user));
-
-        insertData();
+    // Conditional that checks the resulting bmi and provides the type of weight associated with it in the DOM
+    if (isNaN(bmi) || bmi <= 0) { // If the bmi results in a silly value
+        document.getElementById('bmiNumber').innerText = "Wrong";
+        document.getElementById('bmiText').innerHTML = `${user.name}, the numbers you provided seem to be wrong. Please make sure you are entering the correct positive numbers for your height and weight.`;
+    } else if (bmi < 18.5) {
+        document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">underweight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
+    } else if (bmi >= 18.5 && bmi < 25) {
+        document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you have a <span class="input-section__weight-name">healthy weight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
+    } else if (bmi >= 25 && bmi < 30) {
+        document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">overweight</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
+    } else {
+        document.getElementById('bmiText').innerHTML = `${user.name}, your BMI suggests you're <span class="input-section__weight-name">obese</span>. The ideal weight for your height is between <span class="input-section__weight-number">${healthyBmiFloor}kg - ${healthyBmiCeil}kg</span>`;
     }
+
+    // Save the last inputed values in the local storage
+    localStorage.setItem('user', JSON.stringify(user));
+
+    insertData();
 }
 
 // Function to calculate the BMI of the user
@@ -50,15 +48,55 @@ function calculateBMI(user) {
 function insertData() {
     const user = JSON.parse(localStorage.getItem('user'));
     const userDiv = document.createElement('div');
+    const date = luxon.DateTime.now();
+    const hour = date.hour;
+    const minute = date.minute;
+    const formattedTimer = formatTimer(hour, minute);
+    let ordinalIndicator;
+
+    // Change the ordinal indicator depending on the day
+    if (date.day === 1) {
+        ordinalIndicator = 'st';
+    } else if (date.day === 2) {
+        ordinalIndicator = 'nd';
+    } else if (date.day === 3) {
+        ordinalIndicator = 'rd';
+    } else {
+        ordinalIndicator = 'th';
+    }
 
     userDiv.innerHTML = `
-    <div>
-        <p>${user.name} calculo su BMI el dia (insertarfecha) y tuvo un resultado de ${user.bmi}</p>
-        <button class="agregar-carrito">Agregar al carrito</button>
-    </div>
-    `
+        <div class="result-section__div card">
+            <p>${user.name} calculated their BMI the ${date.day}${ordinalIndicator} of ${date.monthLong} ${date.year} on ${date.zoneName} at ${formattedTimer} and had a result of <span class="result-section__bmi">${user.bmi}</span></p>
+            <button type="button" class="result-section__button"><i class="fa-solid fa-square-xmark" style="color: #f59942;"></i></button>
+        </div>
+    `;
 
     document.getElementById('resultData').appendChild(userDiv);
+
+    // Add event listener to the delete button
+    const deleteButton = userDiv.querySelector('.result-section__button');
+    deleteButton.addEventListener('click', () => {
+        userDiv.remove(); // Remove the parent div when the button is clicked
+        Toastify({
+            text: "Deleted",
+            duration: 700,
+            style: {
+                background: "#f59942"
+            }
+        }).showToast();
+    });
+}
+
+function formatTimer(hours, minutes) {
+    // Convert hours and minutes to strings
+    const formattedHours = hours.toString().padStart(2, '0');
+    const formattedMinutes = minutes.toString().padStart(2, '0');
+
+    // Combine the formatted hours and minutes with a colon between them
+    const formattedTimer = `${formattedHours}:${formattedMinutes}hs`;
+
+    return formattedTimer;
 }
 
 
