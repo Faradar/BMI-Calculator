@@ -1,10 +1,15 @@
 // Function to enter the last used values automatically
-function remember() {
-    // Call the function to get the data from the JSON file
-    fetchData();
+async function remember() {
+    // Call the function to get the data from the JSON file and await its result
+    const peopleData = await fetchData();
+
+    // Fill the cards for each user
+    peopleData.forEach((person) => {
+        insertData(person);
+    });
 
     // Retrieve the users array from local storage
-    storedUsers = JSON.parse(localStorage.getItem('users'));
+    const storedUsers = JSON.parse(localStorage.getItem('users'));
 
     // Check if the storedUsers array exists and is not empty
     if (Array.isArray(storedUsers) && storedUsers.length > 0) {
@@ -26,6 +31,22 @@ function remember() {
     }
 }
 
+// Limit the height and weight inputs to prevent silly numbers
+function limitDigits(event) {
+    const input = event.target;
+    const value = input.value;
+    const maxLength = value.includes('.') ? 4 : 3;
+
+    // Remove any non-digit characters from the input
+    const digitsOnly = value.replace(/[^\d.,]/g, '');
+
+    // Limit the number of digits to maxLength
+    const limitedValue = digitsOnly.slice(0, maxLength);
+
+    // Update the input value with the limited digits
+    input.value = limitedValue;
+}
+
 // Function to calculate the BMI of the user
 function calculateBMI(height, weight) {
     let bmiResults = {
@@ -34,6 +55,19 @@ function calculateBMI(height, weight) {
         healthyBmiCeil: (24.9 * Math.pow(height, 2)).toFixed(1)
     };
     return bmiResults;
+}
+
+function generateUserId() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const length = 8; // Adjust the length of the generated ID as needed
+    let userId = '';
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        userId += characters.charAt(randomIndex);
+    }
+
+    return userId;
 }
 
 function showResults(user) {
@@ -88,10 +122,26 @@ function insertData(user) {
 
     document.getElementById('resultData').appendChild(userDiv);
 
-    // Add event listener to the delete button
     const deleteButton = userDiv.querySelector('.result-section__button');
+    // Set the data-id attribute to the user's unique identifier
+    deleteButton.setAttribute('data-id', user.id);
+    // Add event listener to the delete button
     deleteButton.addEventListener('click', () => {
-        userDiv.remove(); // Remove the parent div when the button is clicked
+        const userId = deleteButton.getAttribute('data-id');
+
+        // Find the index of the user with the matching userId in the users array
+        const userIndex = users.findIndex(user => user.id === userId);
+
+        if (userIndex !== -1) {
+            // Remove the user from the users array
+            users.splice(userIndex, 1);
+
+            // Update the local storage with the updated users array
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        // Remove the parent div when the button is clicked
+        userDiv.remove();
         Toastify({
             text: "Deleted",
             duration: 700,
@@ -125,12 +175,16 @@ async function fetchData() {
 
         const data = await response.json();
 
-        data.people.forEach((person) => {
-            insertData(person);
-        });
+        // data.people.forEach((person) => {
+        //     insertData(person);
+        // });
+
+        // Process the data and return the result
+        return data.people;
     } catch (error) {
         // Error handling
         console.error('Error getting the data:', error.message);
+        return []; // Return an empty array if there was an error
     } finally {
         // Code that will always be executed, whether there is an error or not
         console.log('The fetchData function has finished');

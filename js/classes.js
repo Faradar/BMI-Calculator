@@ -1,6 +1,7 @@
 // Create a class for the users
 class User{
-    constructor(name, height, weight, bmi, date) {
+    constructor(id, name, height, weight, bmi, date) {
+        this.id = id;
         this.name = name;
         this.height = height;
         this.weight = weight;

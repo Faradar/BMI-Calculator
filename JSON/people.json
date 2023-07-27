@@ -1,5 +1,6 @@
 {"people":[
     {
+        "id": "mETSxPAP",
         "name": "John Smith",
         "height": 1.72,
         "weight": 86,
@@ -18,6 +19,7 @@
         }
     },
     {
+        "id": "BJlWV7Wy",
         "name": "Elsie Hughes",
         "height": 1.65,
         "weight": 43,
@@ -36,6 +38,7 @@
         }
     },
     {
+        "id": "JzcOo5Y4",
         "name": "Brodie Simmons",
         "height": 1.83,
         "weight": 98,

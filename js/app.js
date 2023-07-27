@@ -40,6 +40,13 @@
 // Execute this function upon startup
 remember();
 
+// Add an event listener to the height and weight inputs
+const heightInput = document.getElementById('height');
+heightInput.addEventListener('input', limitDigits);
+
+const weightInput = document.getElementById('weight');
+weightInput.addEventListener('input', limitDigits);
+
 // Get the form element and trigger a function upon its submission
 const formSubmit = document.getElementById('form');
 formSubmit.addEventListener('submit', (e) => {
@@ -47,10 +54,10 @@ formSubmit.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // Gather the data
-    let name = document.getElementById('name').value;
-    let height = parseFloat(document.getElementById('height').value) / 100; // Divided by 100 to go from cm to meters
-    let weight = parseFloat(document.getElementById('weight').value);
-    let bmi = calculateBMI(height, weight);
+    const name = document.getElementById('name').value;
+    const height = parseFloat(document.getElementById('height').value) / 100; // Divided by 100 to go from cm to meters
+    const weight = parseFloat(document.getElementById('weight').value);
+    const bmi = calculateBMI(height, weight);
     let date = luxon.DateTime.now();
     date = {
         day: date.day,
@@ -61,8 +68,11 @@ formSubmit.addEventListener('submit', (e) => {
         minute: date.minute
     };
 
+    // Generate a unique userId for the current user
+    const userId = generateUserId();
+
     // Transform the gathered data into an object
-    let user = new User(name, height, weight, bmi, date);
+    const user = new User(userId, name, height, weight, bmi, date);
 
     // Add that object to an array
     users.push(user);
@@ -70,47 +80,3 @@ formSubmit.addEventListener('submit', (e) => {
     // Once all is done go to the next function
     showResults(user);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Add event listener to the weight input
-// const weightInput = document.getElementById('weight');
-// weightInput.addEventListener('input', limitDigits);
-
-// const heightInput = document.getElementById('height');
-// heightInput.addEventListener('input', (event) => limitDigits(event, 3));
-
-// function limitDigits(event) {
-//     const input = event.target;
-//     const value = input.value;
-//     const maxLength = value.includes(',') ? 4 : 3;
-
-//     // Remove any non-digit characters from the input
-//     const digitsOnly = value.replace(/[^\d.,]/g, '');
-
-//     // Limit the number of digits to maxLength
-//     const limitedValue = digitsOnly.slice(0, maxLength);
-
-//     // Update the input value with the limited digits
-//     input.value = limitedValue;
-
-//     // Set the cursor position back to the end (for number inputs)
-//     input.setSelectionRange(0, 0);
-// }
