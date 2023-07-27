@@ -1,0 +1,56 @@
+{"people":[
+    {
+        "name": "John Smith",
+        "height": 1.72,
+        "weight": 86,
+        "bmi": {
+            "bmi": "29.1",
+            "healthyBmiCeil": "73.7",
+            "healthyBmiFloor": "54.7"
+        },
+        "date": {
+            "day": 23,
+            "hour": 16,
+            "minute": 29,
+            "monthLong": "July",
+            "year": 2023,
+            "zoneName": "America/Buenos_Aires"
+        }
+    },
+    {
+        "name": "Elsie Hughes",
+        "height": 1.65,
+        "weight": 43,
+        "bmi": {
+            "bmi": "15.8",
+            "healthyBmiCeil": "67.8",
+            "healthyBmiFloor": "50.4"
+        },
+        "date": {
+            "day": 24,
+            "hour": 18,
+            "minute": 36,
+            "monthLong": "July",
+            "year": 2023,
+            "zoneName": "America/Buenos_Aires"
+        }
+    },
+    {
+        "name": "Brodie Simmons",
+        "height": 1.83,
+        "weight": 98,
+        "bmi": {
+            "bmi": "29.3",
+            "healthyBmiCeil": "83.4",
+            "healthyBmiFloor": "62.0"
+        },
+        "date": {
+            "day": 25,
+            "hour": 10,
+            "minute": 55,
+            "monthLong": "July",
+            "year": 2023,
+            "zoneName": "America/Buenos_Aires"
+        }
+    }
+]}

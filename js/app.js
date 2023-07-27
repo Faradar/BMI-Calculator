@@ -17,7 +17,7 @@
 // ---
 // Final Draft:
 // Incorporate libraries - Done
-// Funcion async-await, con fetch a un archivo JSON y que haga uso del try ... catch. Posiblemente agregar un finally (parte de las promesas) y del try catch, fijarse cual tiene sentido usar (probablemente el de try catch).
+// Funcion async-await, con fetch a un archivo JSON y que haga uso del try ... catch. Posiblemente agregar un finally.
 // una idea es usar la libreria de sweet alert para cuando la respuesta este mal, tipo si el fetch no llega
 // implementar email js para enviar mails y demas? mas en la clase 16. es un api que permite que te manden un mail
 // Ver si hay errores 404, si los hay hacerlos lindos (tipo con un sweet alert)
@@ -29,6 +29,13 @@
 // limit the amount of digits you can put in the height and weight inputs, add a possible comma to this limitation. Maybe add a sweet alert popup when you try to write while on the limit
 // add good commentary to the html, sass and js code
 // ---
+
+
+// 1. Tengo que guardar los datos calculados al local storage
+// 2. tengo que hacer que esos datos aparezcan usando el local storage
+// 3. tengp que hacer que esos datos sean recordados y sigan existiendo en otra sesion
+// 4. tengo que hacer que esos datos sean eliminados cuando aprete el boton de eliminar
+
 
 // Execute this function upon startup
 remember();
@@ -43,16 +50,30 @@ formSubmit.addEventListener('submit', (e) => {
     let name = document.getElementById('name').value;
     let height = parseFloat(document.getElementById('height').value) / 100; // Divided by 100 to go from cm to meters
     let weight = parseFloat(document.getElementById('weight').value);
+    let bmi = calculateBMI(height, weight);
+    let date = luxon.DateTime.now();
+    date = {
+        day: date.day,
+        monthLong: date.monthLong,
+        year: date.year,
+        zoneName: date.zoneName,
+        hour: date.hour,
+        minute: date.minute
+    };
 
     // Transform the gathered data into an object
-    let user = new User(name, height, weight);
+    let user = new User(name, height, weight, bmi, date);
 
     // Add that object to an array
     users.push(user);
 
     // Once all is done go to the next function
-    showResults();
+    showResults(user);
 });
+
+
+
+
 
 
 
