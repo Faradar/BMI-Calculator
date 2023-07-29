@@ -1,9 +1,9 @@
-# PreEntrega3-Echeveste-Arteaga
+# ProyectoFinal-Echeveste-Arteaga
 > Body mass index (BMI) tool desgined as the main project of the <a href="https://www.coderhouse.com/collections/categoria-programacion-y-desarrollo/products/javascript" target="_blank" rel="noopener">Coderhouse JavaScript course</a>. What's mainly put in practice here is JS in combination with HTML and CSS that I've learned on the previous course.
 
 > Live demo [_here_](https://bmi-calculator-faradar.vercel.app/).
 
-> Alternative [_here_](https://faradar.github.io/PreEntrega3-Echeveste-Arteaga/).
+> Alternative [_here_](https://faradar.github.io/ProyectoFinal-Echeveste-Arteaga/).
 
 
 ## Table of Contents
@@ -14,7 +14,6 @@
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
-* [To-do list](#to-do-list)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 <!-- * [License](#license) -->
@@ -23,6 +22,10 @@
 ## General Info
 This project is a simple BMI calculator.
 - Simply insert your name, your height and your weight and click calculate!
+- Your BMI will be displayed along with your ideal weight.
+- A card will be generated with your information, which will be saved for future use!
+- You can generate and delete as many cards of information as you want.
+- The date will also be saved, so you can track your progress!
 
 
 ## Technologies
@@ -32,6 +35,8 @@ Project is created with:
 - JavaScript - ES6
 - SASS - version 1.62.0
 - Font Awesome - version 6.4.0
+- Toastify-js - version 1.12.0
+- Luxon - version 3.3.0
 
 
 ## Features
@@ -39,22 +44,18 @@ Project is created with:
 - Suggests ideal weight based on height
 - Remembers your last inputed values for your next session
 - Mobile First
-- Fully responsive.
+- Fully responsive
+- Creates user info cards with date and time, as well as saves this cards for future use
+- These cards are easily deletable
 
 
 ## Screenshots
-![Example screenshot](https://i.imgur.com/irYmgEz.png)
+![Example screenshot](https://i.imgur.com/TuHccC9.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 
 ## Project Status
-Project is: _in progress_.
-
-
-## To-do list
-- Incorporate libraries.
-- Add user data as they search below so they can see there previous searches (and have a way for them to clear it as well).
-- Add a date class to the data as well.
+Project is: _Finished_.
 
 
 ## Acknowledgements
