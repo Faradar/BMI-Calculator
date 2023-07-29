@@ -11,12 +11,9 @@
 * [Technologies](#technologies)
 * [Features](#features)
 * [Screenshots](#screenshots)
-* [Setup](#setup)
-* [Usage](#usage)
 * [Project Status](#project-status)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
-<!-- * [License](#license) -->
 
 
 ## General Info
@@ -40,22 +37,21 @@ Project is created with:
 
 
 ## Features
-- Calculates BMI
-- Suggests ideal weight based on height
-- Remembers your last inputed values for your next session
-- Mobile First
-- Fully responsive
-- Creates user info cards with date and time, as well as saves this cards for future use
-- These cards are easily deletable
+- Calculates BMI.
+- Suggests ideal weight based on height.
+- Remembers your last inputed values for your next session.
+- Creates user info cards with date and time, as well as saves this cards for future use.
+- These cards are easily deletable.
+- Mobile First.
+- Fully responsive.
 
 
 ## Screenshots
 ![Example screenshot](https://i.imgur.com/TuHccC9.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
 
 
 ## Project Status
-Project is: _Finished_.
+Project is: _Finished_
 
 
 ## Acknowledgements
@@ -65,4 +61,4 @@ Project is: _Finished_.
 
 
 ## Contact
-Created by <a href="https://github.com/faradar" target="_blank" rel="noopener">Tomás Echeveste Arteaga</a> - feel free to contact me at <echeveste.t@gmail.com>
+Created by <a href="https://github.com/faradar" target="_blank" rel="noopener">Tomás Echeveste Arteaga</a> - feel free to contact me at <echeveste.t@gmail.com>.
