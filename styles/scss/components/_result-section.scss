@@ -1,4 +1,7 @@
 .result-section {
+    display: flex;
+    flex-direction: column-reverse;
+
     grid-column: span 2;
 
     margin: 0 1rem 2rem;

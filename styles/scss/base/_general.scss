@@ -6,6 +6,16 @@ body {
     font-family: $main-type;
     font-size: 1rem;
 
+    @include tablet {
+        max-width: 800px;
+
+        margin: 0 auto;
+    }
+
+    @include desktop {
+        max-width: 1400px;
+    }
+
     .main-div {
         @include desktop {
             display: grid;
