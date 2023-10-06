@@ -32,7 +32,7 @@ Project is created with:
 
 - HTML5
 - CSS3
-- JavaScript - ES6
+- JavaScript
 - SASS - version 1.62.0
 - Font Awesome - version 6.4.0
 - Toastify-js - version 1.12.0
